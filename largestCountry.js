@@ -26,13 +26,18 @@
 // Example Output: { name: 'USA', population: 12200000 }
 
 const largestCountry = (countries, cities, populations) => {
-  let total = 0;
   const country_list = countries.map((country) => {
-    const city_list = cities.map((city) => {
+    const city_list = cities.filter((city) => city.country_id === country.id);
+    // console.log(city_list);
+    city_list.map((city) => {
+      const total_pop = populations.reduce((total, pop) =>
+        pop.city_id === city.id ? total + pop.amount : total
+      );
       console.log(city);
+      console.log(total_pop);
     });
+    console.log(populations);
   });
-  // console.log(populations);
   return { name: 'ToBeDecided', population: 0 };
 };
 
