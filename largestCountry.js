@@ -43,15 +43,6 @@ const largestCountry = (countries, cities, populations) => {
       name: country.name,
       population: total,
     };
-
-    // city_list.map((city) => {
-    //   const total_pop = populations.reduce((total, pop) =>
-    //     pop.city_id === city.id ? total + pop.amount : total
-    //   );
-    //   console.log(city);
-    //   console.log(total_pop);
-    // });
-    // console.log(populations);
   });
   const largest_pop = country_list.reduce((largest, country) =>
     (largest.population || 0) > country.population ? largest : country
