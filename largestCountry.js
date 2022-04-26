@@ -41,7 +41,7 @@ const largestCountry = (countries, cities, populations) => {
     }
     return {
       name: country.name,
-      populations: total,
+      population: total,
     };
 
     // city_list.map((city) => {
@@ -54,7 +54,7 @@ const largestCountry = (countries, cities, populations) => {
     // console.log(populations);
   });
   const largest_pop = country_list.reduce((largest, country) =>
-    (largest.populations || 0) > country.populations ? largest : country
+    (largest.population || 0) > country.population ? largest : country
   );
 
   return largest_pop;
